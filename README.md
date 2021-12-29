@@ -1,4 +1,4 @@
-# Get All CloudFlare Domains
+# Get All Your CloudFlare Account Domains
 
 The purpose of this app is to list all the Domains in your CloudFlare account. Currently, the CloudFlare dashboard has not way to export the domain names. By using their API and this React App, you can get the list for yourself.
 
