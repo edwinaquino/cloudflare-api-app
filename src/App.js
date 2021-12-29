@@ -1,32 +1,11 @@
-import React, { useReducer, useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 // https://api.cloudflare.com/#zone-list-zones
-const formReducer = (state, event) => {
-  return {
-    ...state,
-    [event.name]: event.value
-  }
-}
+
 const DATA_FILE = "/data/domains.txt";
 
 function App() {
   const zones = useZones();
-  const [formData, setFormData] = useReducer(formReducer, {});
-  const [submitting, setSubmitting] = useState(false);
-  const handleSubmit = event => {
-    event.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-    }, 3000);
-  }
-
-  const handleChange = event => {
-    setFormData({
-      name: event.target.name,
-      value: event.target.value,
-    });
-  }
 
   return (
     <div className="wrapper">
@@ -53,12 +32,13 @@ function App() {
           <li key={zone.id}>{zone.name}</li>
         ))}
       </ol>
+      <hr />
+      <p style={{textAlign: 'center'}}>By: <a href="https://github.com/edwinaquino" target="_blank">Edwin Aquino</a></p>
     </div>
   );
 }
 
-function useZones() {
-  //alert('line 106'); 
+function useZones() { 
   const [zones, setZones] = React.useState([]);
   useEffect(() => {
     fetch(DATA_FILE, {

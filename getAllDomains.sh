@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author: Edwin Aquino - December 26, 2021 - edwinaquino.com
-#clear
+
 echo "This script helps you get all the domains in your account. See https://api.cloudflare.com/#pages-domains-get-domains"
 DATA_FILE="./public/data/domains.txt"
 if [ ! -f $DATA_FILE ]; then
@@ -23,11 +23,9 @@ while [[ $CF_API_KEY = "" ]]; do
    read -p "Please enter your CloudFlare Global API Key (CF_API_KEY):" CF_API_KEY
 done
 
-
   curl -X GET -H "X-Auth-Key: $CF_API_KEY" -H "X-Auth-Email: $CF_API_EMAIL" \
   -H "Content-Type: application/json" \
   "https://api.cloudflare.com/client/v4/zones" \
   --data '{"account": {"id": "'$ACCOUNT_ID'"}, "match":"all"}' -o $DATA_FILE;
  
-
-##################### COMPLETED ##################"
+##################### END ##################"
