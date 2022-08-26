@@ -5,6 +5,9 @@ The purpose of this app is to list all the Domains in your CloudFlare account. C
 ## Requirements
 To use their API, you will need to run a Linux Bash shell script which is included in this repository. The script is called getAllDomains.sh. 
 
+## ScreenShot
+<img width="663" alt="Get All Your CloudFlare Account Domains" src="https://user-images.githubusercontent.com/30946443/186796275-4fe4358e-3251-4b5a-8e7c-1cd87b0b8157.png">
+
 ## Intructions
 * Open your terminal (Linux Recommended)
 * Clone this repository `git clone https://github.com/edwinaquino/cloudflare-api-app.git`
